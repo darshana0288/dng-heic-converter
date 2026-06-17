@@ -1,0 +1,253 @@
+================================================================================
+DNG/HEIC to JPEG Converter - Setup Guide
+================================================================================
+
+OVERVIEW
+========
+
+This is a fully automated converter that:
+- Converts iPhone ProRAW (DNG) photos to high-quality JPEG
+- Converts iPhone HEIC photos to high-quality JPEG
+- Runs locally on your Windows computer (no cloud, no accounts)
+- Perfect for stock photo uploads (Shutterstock, Adobe Stock, etc.)
+
+INSTALLATION (2 STEPS)
+======================
+
+STEP 1: Extract the ZIP
+-----------------------
+1. Download the ZIP file
+2. Extract it to any folder on your computer
+   Example: C:\Users\YourName\Desktop\dng-heic-converter
+
+STEP 2: Run the Installer
+--------------------------
+1. Open the extracted folder
+2. Double-click: INSTALL-AUTO.bat
+3. Let it run completely (takes 2-3 minutes)
+4. Wait for the message: "Installation Complete!"
+5. Close the window
+
+That's it! Everything is installed automatically.
+
+
+WHAT GETS INSTALLED
+====================
+
+The installer automatically downloads and sets up:
+
+1. Node.js v26.3.0 (runtime for the app)
+2. ImageMagick 7.1.2 (HEIC conversion)
+3. exiftool (DNG metadata extraction)
+
+All installed to:
+- C:\nodejs
+- C:\ImageMagick
+- C:\exiftool
+
+Total size: ~200 MB (downloaded once)
+
+
+STARTING THE CONVERTER
+======================
+
+OPTION 1: Quick Start (Recommended)
+-----------------------------------
+1. Go to the converter folder
+2. Double-click: START.bat
+3. Wait a few seconds
+4. Your browser should open automatically
+5. If not, go to: http://localhost:3000
+
+OPTION 2: Manual Start
+----------------------
+1. Open Command Prompt
+2. Navigate to the converter folder:
+   cd C:\Users\YourName\Desktop\dng-heic-converter
+3. Run:
+   npm start
+4. Open browser to: http://localhost:3000
+
+STOPPING THE CONVERTER
+======================
+
+- Press Ctrl+C in the Command Prompt window
+- Or close the Command Prompt window
+
+
+USING THE CONVERTER
+===================
+
+UPLOAD FILES
+------------
+1. Drag and drop DNG/HEIC files onto the upload area
+2. Or click to browse and select files
+3. Or select entire folders for batch processing
+
+ADJUST SETTINGS
+---------------
+- JPEG Quality: Slider from 70-100 (default 92)
+- Max Dimension: Optional resize (leave empty for original)
+- Copyright Name: Optional metadata to add
+
+CONVERT
+-------
+1. Click "Convert All" button
+2. Wait for conversion to complete
+3. Preview the results
+
+DOWNLOAD
+--------
+- Download individual files by clicking "Download" on each
+- Download all at once by clicking "Download All as ZIP"
+
+
+STOCK PHOTO REQUIREMENTS
+=========================
+
+Typical minimum resolution:
+- Shutterstock: 4 MP minimum
+- Adobe Stock: 4 MP minimum
+- iStock: 4 MP minimum
+- Alamy: 4 MP minimum
+
+Always check your target website for current requirements.
+
+
+TROUBLESHOOTING
+===============
+
+PROBLEM: "INSTALL-AUTO.bat" doesn't work
+SOLUTION:
+- Make sure you extracted the ZIP completely
+- Try running as Administrator (right-click → Run as administrator)
+- Check Windows Defender isn't blocking it
+
+PROBLEM: Converter won't start
+SOLUTION:
+- Close Command Prompt completely
+- Open a NEW Command Prompt
+- Navigate to the folder and try again
+- Make sure port 3000 isn't already in use
+
+PROBLEM: Files aren't converting
+SOLUTION:
+- Check if files are valid DNG or HEIC format
+- Verify files aren't corrupted
+- Try with a different file to isolate the problem
+- Check browser console (F12) for error messages
+
+PROBLEM: "Port 3000 already in use"
+SOLUTION:
+- Close other applications using port 3000
+- Or edit server.js and change the port number
+
+PROBLEM: Quality seems low
+SOLUTION:
+- Increase the quality slider (try 95-100)
+- Check original image resolution is high enough
+- Don't set max dimension too small
+
+
+ADVANCED USAGE
+==============
+
+CHANGE OUTPUT FOLDER
+--------------------
+Edit: server.js
+Change: const outputDir = path.join(__dirname, 'output');
+
+CHANGE SERVER PORT
+------------------
+Edit: server.js
+Change: const PORT = process.env.PORT || 3000;
+
+CHANGE DEFAULT QUALITY
+----------------------
+Edit: public/index.html
+Find: value="92"
+Change: to desired value (70-100)
+
+
+UNINSTALLING
+============
+
+Delete the converter folder:
+- C:\Users\YourName\Desktop\dng-heic-converter
+
+Optional: Delete the tools if you don't need them:
+- C:\nodejs
+- C:\ImageMagick
+- C:\exiftool
+
+
+PERFORMANCE TIPS
+================
+
+For batch processing:
+- Optimal batch size: 10-20 files
+- Larger batches may use more memory
+- The app processes files sequentially (one at a time)
+
+For quality:
+- Use quality 92-95 for most stock sites
+- 100 is maximum but creates larger files
+- 85-90 is still excellent and smaller file size
+
+For resizing:
+- Don't resize below 4 MP
+- Keep aspect ratio (app does this automatically)
+- Original size is always fastest
+
+
+SECURITY
+========
+
+This app:
+- Runs entirely locally (no internet required after installation)
+- Doesn't upload files anywhere
+- Doesn't collect any data
+- All processing happens on your computer
+- No accounts or login needed
+
+The installer downloads tools once from trusted sources.
+
+
+GETTING HELP
+============
+
+1. Check the README.md file for detailed information
+2. Review the troubleshooting section above
+3. Check browser console (F12) for error messages
+4. Check Command Prompt output for diagnostics
+
+
+QUICK REFERENCE
+===============
+
+Common commands:
+- Start: npm start
+- Stop: Ctrl+C
+- Location: http://localhost:3000
+
+Key files:
+- START.bat: Start the converter
+- INSTALL-AUTO.bat: Run the installer again
+- server.js: Backend server
+- public/index.html: Web interface
+
+Default settings:
+- Quality: 92
+- Port: 3000
+- Output folder: ./output
+
+
+================================================================================
+
+Ready to convert? Just double-click START.bat and you're done!
+
+Questions? See README.md for detailed information.
+
+Happy converting! 🎉
+
+================================================================================
