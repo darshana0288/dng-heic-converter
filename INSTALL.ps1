@@ -10,8 +10,8 @@ Write-Host ""
 
 $startTime = Get-Date
 
-$imageMagickUrl = "https://pub-89e1b44c11474d1bb70d3caf8de2b99c.r2.dev/DNG-HEIC-Image_Converter/ImageMagick-7.1.2-25-Q16-HDRI-x64-dll.exe"
-$exiftoolUrl = "https://pub-89e1b44c11474d1bb70d3caf8de2b99c.r2.dev/DNG-HEIC-Image_Converter/exiftool.zip"
+$imageMagickUrl = "https://github.com/ImageMagick/ImageMagick/releases/download/7.1.2-25/ImageMagick-7.1.2-25-Q16-HDRI-x64-dll.exe"
+$exiftoolUrl = "https://github.com/darshana0288/dng-heic-converter/releases/download/exiftool/exiftool.zip"
 
 Write-Host "[1/7] Checking Node.js..." -ForegroundColor Cyan
 

@@ -194,11 +194,11 @@ The installer automatically downloads:
 
 2. **ImageMagick 7.1.2-25** (~50 MB)
    - Image processing for HEIC conversion
-   - From: Custom S3 bucket (trusted source)
+   - From: GitHub (official ImageMagick releases)
 
 3. **exiftool** (~5 MB)
    - Metadata extraction for DNG files
-   - From: Custom S3 bucket (trusted source)
+   - From: GitHub (dng-heic-converter releases)
 
 Total download size: ~200 MB (one-time)
 
